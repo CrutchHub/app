@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+</head>
+<body>
+    <header class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-list-item"><a>Главная</a></li>
+                <li class="header-nav-list-item"><a>Дома</a></li>
+                <li class="header-nav-list-item"><a>Контакты</a></li>
+                <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <input type="text" placeholder="Nickname" name="nickname">
+            <br>
+            <input type="text" placeholder="mail" name="mail">
+            <br>
+            <input type="password" placeholder="password" name="password">
+            <br>
+            <input type="password" placeholder="Password2" name="password2">
+            <br>
+            <input type="text" placeholder="firstname" name="firstname">
+            <br>
+            <input type="text" placeholder="lastname" name="lastname">
+            <br>
+            <input type="submit">
+        </form>
+    </main>
+</body>
+</html>

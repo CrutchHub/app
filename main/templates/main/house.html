@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+</head>
+<body>
+    <header class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
+                <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a>Контакты</a></li>
+                <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="house-div">
+                <img class="house-image" src="{{ house.Image.url }}">
+                <div class="house-info">
+                    <div>{{ house.AdressID.AdressText }}</div>
+                    <div>Число этажей:{{ house.NumberOfFloors }}</div>
+                    <div>Количество подъездов:{{ house.NumberOfEntrances }}</div>
+                </div>
+            </div>
+            <div class="appart-list">
+                <table>
+                    <tr>
+                        <td>Номер квартиры</td>
+                        <td>Количество комнат</td>
+                        <td>Цена</td>
+                    </tr>
+                    {% for apartment in apartments %}
+                    <tr>
+                        <td><a href="{% url 'apartment' apartment_id=apartment.ID %}" class="hata">{{ apartment.ApartmentNumber }}</a></td>
+                        <td>{{ apartment.NumberOfRooms }}</td>
+                        <td>{{ apartment.Cost }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

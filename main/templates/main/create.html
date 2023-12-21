@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+</head>
+<body>
+    <header class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
+                <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a href="{% url "profile" %}">Профиль</a></li>
+                <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Заявка успешно создана!</h2>
+    </main>
+</body>
+</html>

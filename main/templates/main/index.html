@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+</head>
+<body>
+    <header class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
+                <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a href="{% url "profile" %}">Профиль</a></li>
+                <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="slidersection">
+            <img src="{{ houses.1.Image.url }}" class="image">
+        </section>
+        <section>
+            <h1 class="zagolovok">Популярные предложения</h1>
+            <div class="main-catalogue">
+                <div class="main-catalogue-row">
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.1.ID %}" class="ssylka"><img src="{{ houses.1.Image.url }}" class="item-image" alt=""></a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.0.ID %}" class="ssylka"><img src="{{ houses.0.Image.url }}" class="item-image" alt=""></a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.2.ID %}" class="ssylka"><img src="{{ houses.2.Image.url }}" class="item-image" alt=""></a></div>
+                </div>
+                <div class="main-catalogue-row">
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.3.ID %}" class="ssylka"><img src="{{ houses.3.Image.url }}" class="item-image" alt=""></a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.4.ID %}" class="ssylka"><img src="{{ houses.4.Image.url }}" class="item-image" alt=""></a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.5.ID %}" class="ssylka"><img src="{{ houses.5.Image.url }}" class="item-image" alt=""></a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
