@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_z*!s8#p(ef($&a&rw(eq^!j03kbf-mcyvl5b$j7^q9=)r2dmx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.241', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '192.168.1.7', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'venya',
     'django.contrib.postgres',
 ]
 

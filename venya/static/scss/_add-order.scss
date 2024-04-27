@@ -1,0 +1,35 @@
+.order {
+  visibility: hidden;
+}
+
+.order {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 150px;
+  margin-bottom: 20px;
+  background-color: $color-bg-box-one;
+  .info-order {
+    width: 100%;
+    padding: 5px;
+    border-radius: 2px;
+    color: $color-date-one;
+    background-color: $color-bg-box-two;
+    p {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+  }
+}
+
+.section-button-order {
+  position: sticky;
+  left: 43.5%;
+  margin-top: -50px;
+  bottom: 0%;
+  background-color: $color-button-two;
+  color: $color-button-fonts-one;
+  border: none;
+  font-weight: 600;
+}

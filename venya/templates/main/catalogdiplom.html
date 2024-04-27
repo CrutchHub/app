@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>AutoBridge</title>
+  <link href="{% static "img/AB-icons.png" %}" type="image/png" rel="shortcut icon">
+  <link href="{% static "css/main.css" %}" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav-one">
+        <ul>
+          <li><a href="{% url "mainpage" %}">Главная</a></li>
+          <li><a href="{% url "account" %}">Аккаунт</a></li>
+          <li><a href="{% url "catalogdiplom" %}">Каталог</a></li>
+          <li><a href="{% url "order" %}">Заявка</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-two">
+        <ul>
+          <li><a href="/logout">Выход</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="container-catalog">
+      <div class="filter-block">
+        <h3>Фильтр</h3>
+        <form>
+          <div class="filter-radio-list">
+            <div>
+              <input type="radio" id="all" name="alls" value="1" checked />
+              <label for="all">Все</label>
+            </div>
+            <div>
+              <input type="radio" id="new" name="alls" value="2" />
+              <label for="new">Новые</label>
+            </div>
+            <div>
+              <input type="radio" id="used" name="alls" value="3" />
+              <label for="used">С пробегом</label>
+            </div>
+          </div>
+
+          <h5>Страна</h5>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+
+          <h5>Цена</h5>
+          <div>
+            <p>От</p><input type="number" value="0">
+            <p>До</p><input type="number">
+          </div>
+
+          <h5>Год изготовления</h5>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+
+          <h5>Коробка</h5>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+
+          <h5>Двигатель</h5>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </form>
+        <button>Найти</button>
+      </div>
+      <div class="bg-catalog">
+        <div>
+          <div class="search-block">
+            <input type="search" placeholder="Поиск">
+            <button>Найти</button>
+          </div>
+
+          <div class="cars-block">
+            <div class="element-car">
+              <img src="../img/cube.png" alt=" ">
+              <div class="info-car">
+                <p>Марка Сюда бы значение 1</p>
+                <p>Год Сюда бы значение 2</p>
+                <p>Стоимость Сюда бы значение 3</p>
+              </div>
+            </div>
+
+            <div class="element-car">
+              <img src="../img/cube.png" alt=" ">
+              <div class="info-car">
+                <p>Марка Сюда бы значение 1</p>
+                <p>Год Сюда бы значение 2</p>
+                <p>Стоимость Сюда бы значение 3</p>
+              </div>
+            </div>
+
+            <div class="element-car">
+              <img src="../img/cube.png" alt=" ">
+              <div class="info-car">
+                <p>Марка Сюда бы значение 1</p>
+                <p>Год Сюда бы значение 2</p>
+                <p>Стоимость Сюда бы значение 3</p>
+              </div>
+            </div>
+
+            <div class="element-car">
+              <img src="../img/cube.png" alt=" ">
+              <div class="info-car">
+                <p>Марка Сюда бы значение 1</p>
+                <p>Год Сюда бы значение 2</p>
+                <p>Стоимость Сюда бы значение 3</p>
+              </div>
+            </div>
+
+            <div class="element-car">
+              <img src="../img/cube.png" alt=" ">
+              <div class="info-car">
+                <p>Марка Сюда бы значение 1</p>
+                <p>Год Сюда бы значение 2</p>
+                <p>Стоимость Сюда бы значение 3</p>
+              </div>
+            </div>
+          </div>
+          <div class="pages-list">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+          </div>
+        </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+nav a:hover {
+  background-color: #880000;
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 3px 3px;
+  margin: -3px -3px;
+  transition: background-color 1s;
+}
+nav a:active {
+  background-color: #ffffff;
+  color: #880000;
+  border-radius: 2px;
+  padding: 3px 3px;
+  margin: -3px -3px;
+}
+button:hover {
+  background-color: #ffffff;
+  color: #880000;
+  transition: background-color 0.7s;
+}
+button:active {
+  background-color: #880000;
+  color: #ffffff;
+}
+input:hover {
+  background-color: #880000;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.pages-list a:hover {
+  color: #880000;
+  transition: color 0.3s;
+}
+.pages-list a:active {
+  color: #000000;
+}
+
+.element-car img:hover {
+  transition: transform 0.5s;
+  transform: scale(1.07);
+}
