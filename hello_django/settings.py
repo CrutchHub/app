@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'main',
     'venya',
     'django.contrib.postgres',
+    "phonenumber_field",
+    # "phonenumber",
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,7 @@ LOGOUT_REDIRECT_URL = 'login'
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+PHONENUMBER_DEFAULT_REGION = 'RU'
+
+# AUTH_USER_MODEL = 'venya.Users'
