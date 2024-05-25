@@ -31,7 +31,75 @@
                 </form>
             </div>
         </div> {% endcomment %}
-        <div class="appart-list">
+        <div class="catalog">
+             {% for house in houses %}
+            {% if forloop.counter0|divisibleby:4 %}
+                <div class="catalog-row">
+            {% endif %}
+
+            <div class="catalog-item">
+                <div class="catalog-img">
+                    <img src="{{ house.Image.url }}" alt="House Image">
+                </div>
+                <div class="catalog-item-description">
+                    <div class="boldtextprice">{{ house.AdressID.AdressText }}</div>
+                    <div class="descritem">{{ house.NumberOfFloors }} этажей</div>
+                    <div class="descritem">{{ house.NumberOfEntrances }} подъезда</div>
+                </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %} 
+        {% comment %} <div class="catalog-row">
+            <div class="catalog-item">
+                <div class="catalog-img">
+                    <img src="https://cdn.fishki.net/upload/post/2021/11/28/4013894/34b28c17fca6a072d77e1890d51439c4.jpg">
+                </div>
+                <div class="catalog-item-description">
+                    <div class="boldtextprice">Улица пушкина дом колотушкина епта</div>
+                    <div class="descritem">8 этажей</div>
+                    <div class="descritem">2 падика</div>
+                    <div class="descritem">30 свободных халуп</div>
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="catalog-img">
+                    <img src="https://cdn.fishki.net/upload/post/2021/11/28/4013894/34b28c17fca6a072d77e1890d51439c4.jpg">
+                </div>
+                <div class="catalog-item-description">
+                    <div class="boldtextprice">Улица пушкина дом колотушкина епта</div>
+                    <div class="descritem">8 этажей</div>
+                    <div class="descritem">2 падика</div>
+                    <div class="descritem">30 свободных халуп</div>
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="catalog-img">
+                    <img src="https://cdn.fishki.net/upload/post/2021/11/28/4013894/34b28c17fca6a072d77e1890d51439c4.jpg">
+                </div>
+                <div class="catalog-item-description">
+                    <div class="boldtextprice">Улица пушкина дом колотушкина епта</div>
+                    <div class="descritem">8 этажей</div>
+                    <div class="descritem">2 падика</div>
+                    <div class="descritem">30 свободных халуп</div>
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="catalog-img">
+                    <img src="https://cdn.fishki.net/upload/post/2021/11/28/4013894/34b28c17fca6a072d77e1890d51439c4.jpg">
+                </div>
+                <div class="catalog-item-description">
+                    <div class="boldtextprice">Улица пушкина дом колотушкина епта</div>
+                    <div class="descritem">8 этажей</div>
+                    <div class="descritem">2 падика</div>
+                    <div class="descritem">30 свободных халуп</div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        </div>
+        <div class="appart-list">            
             <table class="tablica">
                 <tr>
                     <td>Адрес</td>

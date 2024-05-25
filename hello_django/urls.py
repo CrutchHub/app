@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main import views
-from venya import views as diplom
 from django.conf.urls.static import static
 from django.conf import settings
 include("django.contrib.auth.urls")
@@ -34,13 +33,6 @@ urlpatterns = [
     path('apartment/<int:apartment_id>', views.apartment, name='apartment'),
     path('catalog', views.catalog, name='catalog'),  
     path('create/<int:apartment_id>', views.create, name='create'),
-    path('diplom/index', diplom.index, name='mainpage'),
-    path('diplom/car', diplom.car, name='car'),
-    path('diplom/register', diplom.reg, name='register'),
-    path('diplom/order', diplom.order, name='order'),
-    path('diplom/catalog', diplom.catalog, name='catalogdiplom'),
-    path('diplom/auth', diplom.auth, name='auth'),
-    path('diplom/account', diplom.account, name='account'),
 ]
 
 if settings.DEBUG:

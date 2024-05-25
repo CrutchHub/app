@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'venya',
     'django.contrib.postgres',
     "phonenumber_field",
     # "phonenumber",
