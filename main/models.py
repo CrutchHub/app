@@ -40,6 +40,7 @@ class Apartment(models.Model):
     NumberOfRooms = models.IntegerField(default=1)
     Cost = models.FloatField(default=0)
     Image = models.ImageField(upload_to="images", null=True, blank=True)
+    Model3D = models.FileField(upload_to='3d_models')
 
     def get_image_url(self):
         if self.Image:

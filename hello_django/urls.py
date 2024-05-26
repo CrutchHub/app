@@ -27,6 +27,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('reg', views.reg),   
     path('profile', views.profile, name='profile'),
+    path('apartcatalog', views.kvartira, name='apartcatalog'),
     path('logout', views.StyledLogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register'),
     path('house/<int:house_id>', views.house, name='house'),

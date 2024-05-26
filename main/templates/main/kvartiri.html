@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+</head>
+<body>
+    <header class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
+                <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a href="{% url "apartcatalog" %}">Квартиры</a></li>
+                <li class="header-nav-list-item"><a href="{% url "profile" %}">Профиль</a></li>
+                <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% comment %} <div class="house-div">
+            <img class="house-image" src="{{ apartment.Image.url }}">
+            <div class="house-info">
+                <div>Квартира номер:{{ apartment.ApartmentNumber }}</div>
+                <div>Число комнат:{{ apartment.NumberOfRooms }}</div>
+                <div>Цена:{{ apartment.Cost }} рублей</div>
+                <form>
+                    <input type="phone" placeholder="номер телефона" class="phone">
+                    <input type="submit" placeholder="отправить заявку" value="Отправить заявку" class="submit">
+                </form>
+            </div>
+        </div> {% endcomment %}
+        <div class="filter"> 
+            <select>
+                <option>Студия</option>
+                <option>1 комната</option>
+                <option>2 комнаты</option>
+            </select>
+            <input type="text" placeholder="Мин. цена">
+            <input type="text" placeholder="Макс. цена">
+            <input type="text" placeholder="Мин. площадь">
+            <input type="text" placeholder="Макс. площадь">
+        </div>
+        <div class="catalog">
+             {% for kvartira in kvartiri %}
+            {% if forloop.counter0|divisibleby:4 %}
+                <div class="catalog-row">
+            {% endif %}
+            
+            <a class="catalog2-item" href="{% url 'apartment' apartment_id=kvartira.ID %}">
+                <div class="catalog2-img">
+                    <img src="{{ kvartira.Image.url }}" alt="House Image">
+                </div>
+                <div class="catalog2-item-description">
+                    <div class="descritem">Номер квартиры: {{ kvartira.ApartmentNumber }} </div>
+                    <div class="descritem">Число комнат: {{ kvartira.NumberOfRooms }} </div>
+                    <div class="descritem">Цена: {{ kvartira.Cost }} </div>
+                </div>
+            </a>
+
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %} 
+        </div>
+        {% comment %} <div class="appart-list">            
+            <table class="tablica">
+                <tr>
+                    <td>Адрес</td>
+                    <td>Количество этажей</td>
+                    <td>Количество подъездов</td>
+                </tr>
+                {% for house in houses %}
+                <tr>
+                    <td><a href="{% url 'house' house_id=house.ID %}" class="hata">{{ house.AdressID.AdressText }}</a></td>
+                    <td>{{ house.NumberOfFloors }}</td>
+                    <td>{{ house.NumberOfEntrances }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div> {% endcomment %}
+    </main>
+</body>
+</html>

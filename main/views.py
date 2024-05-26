@@ -45,6 +45,10 @@ def index(request):
 def reg(request):
     return render(request, 'main/reg.html')
 
+def kvartira(request):
+    kvartiras = Apartment.objects.all()
+    return render(request, 'main/kvartiri.html', {'kvartiri' : kvartiras})
+
 def register(request):
     if request.method == 'POST':
         form = ExtendedUserCreationForm(request.POST)

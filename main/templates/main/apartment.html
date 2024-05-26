@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 <body>
     <header class="container">
@@ -13,6 +14,7 @@
             <ul class="header-nav-list">
                 <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
                 <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a href="{% url "apartcatalog" %}">Квартиры</a></li>
                 <li class="header-nav-list-item"><a href="{% url "profile" %}">Профиль</a></li>
                 <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
             </ul>
@@ -22,9 +24,9 @@
         <div class="house-div">
             <img class="house-image" src="{{ apartment.Image.url }}">
             <div class="house-info">
-                <div>Квартира номер:{{ apartment.ApartmentNumber }}</div>
-                <div>Число комнат:{{ apartment.NumberOfRooms }}</div>
-                <div>Цена:{{ apartment.Cost }} рублей</div>
+                <div>Квартира номер: {{ apartment.ApartmentNumber }}</div>
+                <div>Число комнат: {{ apartment.NumberOfRooms }}</div>
+                <div>Цена: {{ apartment.Cost }} рублей</div>
                 <form>
                     <!-- <input type="phone" placeholder="номер телефона" class="phone"> -->
                     {% if user.is_authenticated %}
@@ -33,6 +35,22 @@
                 </form>
             </div>
         </div>
+        <br>
+        <h1 class="zagolovok">3D модель</h1>
+        <div class="d3"> 
+            <model-viewer src="{{ apartment.Model3D.url}}" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="42.89deg 78.06deg 24.12m" field-of-view="20.11deg">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+                <div id="ar-prompt">
+                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                </div>
+            </model-viewer>
+        </div>
+        
     </main>
 </body>
 </html>

@@ -13,6 +13,7 @@
             <ul class="header-nav-list">
                 <li class="header-nav-list-item"><a href="{% url "index" %}">Главная</a></li>
                 <li class="header-nav-list-item"><a href="{% url "catalog" %}">Дома</a></li>
+                <li class="header-nav-list-item"><a href="{% url "apartcatalog" %}">Квартиры</a></li>
                 <li class="header-nav-list-item"><a href="{% url "profile" %}">Профиль</a></li>
                 <li class="header-nav-list-item"><input type="search" placeholder="Поиск" class="header-nav-list-item-search"></li>
             </ul>
@@ -40,14 +41,14 @@
             <h1 class="zagolovok">Популярные предложения</h1>
             <div class="main-catalogue">
                 <div class="main-catalogue-row">
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.1.ID %}" class="ssylka"><img src="{{ houses.1.Image.url }}" class="item-image" alt="">{{ houses.1.AdressID.AdressText }}</a></div>
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.0.ID %}" class="ssylka"><img src="{{ houses.0.Image.url }}" class="item-image" alt="">{{ houses.0.AdressID.AdressText }}</a></div>
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.2.ID %}" class="ssylka"><img src="{{ houses.2.Image.url }}" class="item-image" alt="">{{ houses.2.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.1.ID %}" class="ssylka ssylka-main"><img src="{{ houses.1.Image.url }}" class="item-image" alt="">{{ houses.1.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.0.ID %}" class="ssylka ssylka-main"><img src="{{ houses.0.Image.url }}" class="item-image" alt="">{{ houses.0.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.2.ID %}" class="ssylka ssylka-main"><img src="{{ houses.2.Image.url }}" class="item-image" alt="">{{ houses.2.AdressID.AdressText }}</a></div>
                 </div>
                 <div class="main-catalogue-row">
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.3.ID %}" class="ssylka"><img src="{{ houses.3.Image.url }}" class="item-image" alt="">{{ houses.3.AdressID.AdressText }}</a></div>
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.4.ID %}" class="ssylka"><img src="{{ houses.4.Image.url }}" class="item-image" alt="">{{ houses.4.AdressID.AdressText }}</a></div>
-                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.5.ID %}" class="ssylka"><img src="{{ houses.5.Image.url }}" class="item-image" alt="">{{ houses.5.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.3.ID %}" class="ssylka ssylka-main"><img src="{{ houses.3.Image.url }}" class="item-image" alt="">{{ houses.3.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.4.ID %}" class="ssylka ssylka-main"><img src="{{ houses.4.Image.url }}" class="item-image" alt="">{{ houses.4.AdressID.AdressText }}</a></div>
+                    <div class="main-catalogue-item"><a href="{% url 'house' house_id=houses.5.ID %}" class="ssylka ssylka-main"><img src="{{ houses.5.Image.url }}" class="item-image" alt="">{{ houses.5.AdressID.AdressText }}</a></div>
                 </div>
             </div>
         </section>
