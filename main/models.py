@@ -39,6 +39,7 @@ class Apartment(models.Model):
     ApartmentNumber = models.IntegerField(default=0)
     NumberOfRooms = models.IntegerField(default=1)
     Cost = models.FloatField(default=0)
+    Area = models.FloatField(default=0, null=True)
     Image = models.ImageField(upload_to="images", null=True, blank=True)
     Model3D = models.FileField(upload_to='3d_models')
 

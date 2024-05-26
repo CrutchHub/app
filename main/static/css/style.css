@@ -235,7 +235,7 @@ a{
     text-align: center;
 }
 .ssylka-main{
-    color: black;
+    color:#1E375A;
 }
 .house-div{
     display: flex;
@@ -333,7 +333,7 @@ td {
     width: 1700px;
 }
 #welcome-block {
-    background-color: #f2f2f2;
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -341,7 +341,7 @@ td {
 }
 
 #welcome-block p {
-    font-size: 16px;
+    font-size: 22px;
     margin: 10px 0;
 }
 
@@ -523,4 +523,21 @@ input {
     flex-direction: column;
     justify-content: space-between; /* Распределяет элементы равномерно по вертикали */
     margin-bottom: 10px;
+}
+
+.zayavki{
+    width: 100%;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.zayavki div{
+    margin-left: 30px;
+    font-size: 24px;
+    color: #007bff;
 }

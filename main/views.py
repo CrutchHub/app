@@ -65,4 +65,5 @@ def auth(request):
 
 @login_required(login_url='/login')
 def profile(request):
-    return render(request, 'registration/profile.html')
+    apps = Application.objects.filter(UserID = request.user)
+    return render(request, 'registration/profile.html', {'apps': apps})
