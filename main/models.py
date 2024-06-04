@@ -24,6 +24,7 @@ class House(models.Model):
     NumberOfFloors = models.IntegerField(default=1)
     NumberOfEntrances = models.IntegerField(default=1)
     Image = models.ImageField(upload_to="images", null=True, blank=True)
+    House_Number = models.IntegerField(default=0)
     
     def get_image_url(self):
         if self.Image:
@@ -40,6 +41,7 @@ class Apartment(models.Model):
     NumberOfRooms = models.IntegerField(default=1)
     Cost = models.FloatField(default=0)
     Area = models.FloatField(default=0, null=True)
+    Is_Booked = models.BooleanField(default=False)
     Image = models.ImageField(upload_to="images", null=True, blank=True)
     Model3D = models.FileField(upload_to='3d_models')
 

@@ -53,14 +53,25 @@
     <button type="submit">Register</button>
     </div>
   </form> -->
-  <form class="register-form" method="post" action="{% url 'register' %}">
+  <div class="register-container">
+    <form class="register-form" method="post" action="{% url 'register' %}">
+      {% csrf_token %}
+      <h2>Регистрация</h2>
+      <label>Телефон:</label>
+      <input type="tel" placeholder="">
+      {{ form.as_p }}
+      <button type="submit">Зарегистрироваться</button>
+      <a href="{% url 'login' %}">Уже зарегистрированы?</a>
+    </form>
+  </div>
+  {% comment %} <form class="register-form" method="post" action="{% url 'register' %}">
     {% csrf_token %}
     <h2>Регистрация</h2>
     <input type="tel" placeholder="Телефон">
     {{ form.as_p }}
     <button type="submit">Зарегистрироваться</button>
     <a href="{% url 'login' %}">Уже зарегистрированы?</a>
-</form>
+</form> {% endcomment %}
 {% endblock %}
 </main>
 

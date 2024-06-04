@@ -26,6 +26,7 @@
             <div class="house-info">
                 <div>Квартира номер: {{ apartment.ApartmentNumber }}</div>
                 <div>Число комнат: {{ apartment.NumberOfRooms }}</div>
+                <div>Площадь: {{ apartment.Area }} </div>
                 <div>Цена: {{ apartment.Cost }} рублей</div>
                 <form>
                     <!-- <input type="phone" placeholder="номер телефона" class="phone"> -->
@@ -36,6 +37,19 @@
             </div>
         </div>
         <br>
+        <h1 class="zagolovok">Калькулятор цены ипотеки</h1>
+        <section class="calculator">           
+            <div class="calculator-div">
+                <input type="number" placeholder="Сумма" value="6067577">
+                <input type="number" placeholder="Процент" value="8">
+                <input type="number" placeholder="Годы" value="30">
+            </div>
+            <div class="calculator-div calculator-result">
+                <div>Ежемесячный платеж <br> <span class="calculator-result-text">31165 ₽</span></div>
+                <div>Первоначальный взнос <br><span class="calculator-result-text">1820273 ₽</span></div>
+                <div>Переплата <br><span class="calculator-result-text">6 972 096</span></div>
+            </div>
+        </section>
         <h1 class="zagolovok">3D модель</h1>
         <div class="d3"> 
             <model-viewer src="{{ apartment.Model3D.url}}" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="42.89deg 78.06deg 24.12m" field-of-view="20.11deg">
